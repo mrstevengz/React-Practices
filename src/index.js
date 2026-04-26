@@ -1,32 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//Empieza con letra mayuscula
-//Debe retornar JSX (HTML)
-//Debe cerrar el tag
-function Greeting() {
+function BookList() {
   return (
-    <React.Fragment>
-      <div>
-        <h3>Hello People</h3>
-        <ul>
-          <li>
-            <a href="">hola mundo</a>
-          </li>
-        </ul>
-      </div>
-    </React.Fragment>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-// function Greeting() {
-//   return React.createElement(
-//     "div",
-//     {},
-//     React.createElement("h2", {}, "hello world"),
-//   );
-// }
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/81P0NvoRrWL._AC_UL600_SR600,400_.jpg"
+    alt=""
+  />
+);
+const Title = () => {
+  return <h2>Theo of Golden: A Novel</h2>;
+};
+
+const Author = () => <h2>Allen Levi</h2>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Greeting />);
+root.render(<BookList />);
